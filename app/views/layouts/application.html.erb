@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="h-full antialiased dark">
+  <head>
+    <title>Dominic Goulet</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="flex min-h-full flex-col bg-white dark:bg-gray-950">
+    <div class="relative flex-none overflow-hidden px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex lg:px-0">
+      <div class="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+        <%= inline_svg_tag 'glow.svg' %>
+
+        <div class="absolute inset-x-0 bottom-0 right-0 h-px bg-white mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px"></div>
+      </div>
+
+      <div class="relative flex w-full lg:pointer-events-auto lg:mr-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] lg:overflow-y-auto lg:overflow-x-hidden lg:pl-[max(4rem,calc(50%-38rem))]">
+        <div class="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:flex-1 lg:before:pt-6">
+          <div class="pb-16 pt-20 sm:pb-20 sm:pt-32 lg:py-20">
+            <div class="relative">
+              <%= inline_svg_tag 'star_field.svg' %>
+
+              <div>
+                <%= link_to root_path do %>
+                  <%= image_tag 'dominic_goulet.jpg', class: 'inline-block h-24 w-24 rounded-full border-4 border-sky-300' %>
+                <% end %>
+              </div>
+
+              <h1 class="mt-4 font-display text-5xl/tight font-light text-white">
+                Dominic Goulet
+                <div class="text-sky-300 text-4xl">Full Stack Engineer</div>
+              </h1>
+
+              <p class="mt-4 text-lg text-gray-300">
+                I am a full stack software engineer with a passion for building great products and solving complex problems.
+              </p>
+
+              <p class="mt-4 text-lg text-gray-300">
+                I have a strong background in Ruby on Rails, Data Engineering and Business Intelligence.
+              </p>
+
+              <p class="mt-4 text-lg text-gray-300">
+                Get in touch 👇
+              </p>
+
+              <div class="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
+                <% @social_links.each do |social_link| %>
+                <a class="flex-none group relative isolate flex items-center rounded-lg px-3 py-2 text-[0.8125rem]/6 font-medium text-white/30 transition-colors hover:text-sky-300 gap-x-3" href="<%= social_link.href %>" target="_blank">
+                  <span class="absolute inset-0 -z-10 scale-75 rounded-lg bg-white/5 opacity-0 transition group-hover:scale-100 group-hover:opacity-100"></span>
+                  <%= inline_svg_tag(social_link.svg_path) %>
+                  <span class="self-baseline text-white"><%= social_link.caption %></span>
+                </a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative flex-auto">
+      <div class="pointer-events-none absolute inset-0 z-50 overflow-hidden lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] lg:overflow-visible">
+        <%= inline_svg_tag 'timeline_marks.svg' %>
+      </div>
+
+      <main class="space-y-20 py-20 sm:space-y-32 sm:py-32">
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>

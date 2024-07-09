@@ -1,0 +1,9 @@
+<tr>
+  <td class="whitespace-nowrap py-4 pl-4 text-sm font-medium text-gray-900 sm:pl-0 w-1/4"><%= social_link.caption %></td>
+  <td class="whitespace-nowrap py-4 text-sm text-gray-500 w-1/2"><%= social_link.href %></td>
+  <td class="whitespace-nowrap py-4 text-sm text-gray-500 w-1/4"><%= social_link.svg_path %></td>
+  <td class="relative whitespace-nowrap py-4 text-right text-sm font-medium sm:pr-0 flex gap-8">
+    <%= button_to 'Delete', admin_social_link_path(social_link), method: :delete, class: 'text-red-600 hover:text-red-900' %>
+    <%= link_to 'Edit', edit_admin_social_link_path(social_link), class: 'text-indigo-600 hover:text-indigo-900' %>
+  </td>
+</tr>

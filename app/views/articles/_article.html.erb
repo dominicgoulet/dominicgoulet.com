@@ -1,0 +1,47 @@
+<article class="scroll-mt-16 pb-0">
+  <div>
+    <header class="relative mb-10 xl:mb-0">
+      <div class="pointer-events-none absolute left-[max(-0.5rem,calc(50%-18.625rem))] top-0 z-50 flex h-4 items-center justify-end gap-x-2 lg:left-0 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] xl:h-8">
+        <a class="inline-flex" href="#commit-message-suggestions">
+          <%= link_to article_path(article.slug), class: 'inline-flex' do %>
+            <time datetime="<%= article.published_on %>" class="font-mono hidden xl:pointer-events-auto xl:block xl:text-2xs/4 xl:font-medium xl:text-white/50"><%= article.published_on.strftime("%b %e, %Y") %></time>
+          <% end %>
+        </a>
+
+        <div class="h-[0.0625rem] w-3.5 bg-gray-400 lg:-mr-3.5 xl:mr-0 xl:bg-gray-300"></div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+        <div class="lg:ml-96 lg:flex lg:w-full lg:justify-end lg:pl-32">
+          <div class="mx-auto max-w-lg lg:mx-0 lg:w-0 lg:max-w-xl lg:flex-auto">
+            <div class="flex">
+              <%= link_to article_path(article.slug), class: 'inline-flex' do %>
+                <time datetime="<%= article.published_on %>" class="font-mono text-2xs/4 font-medium text-gray-500 dark:text-white/50 xl:hidden"><%= article.published_on %></time>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+      <div class="lg:ml-96 lg:flex lg:w-full lg:justify-end lg:pl-32">
+        <div class="mx-auto max-w-lg lg:mx-0 lg:w-0 lg:max-w-xl lg:flex-auto typography">
+
+          <div class="-ml-5 pt-2 text-xs text-purple-700 font-bold font-mono">
+            <span class="text-green-500 mr-1">➜</span>
+            <span class="text-sky-500 mr-1">dominicgoulet.com</span>
+            <% article.labels.each do |label| %>
+              <span class="mr-1">label:(<span class="text-red-500"><%= label.name.downcase.gsub(' ', '_') %></span>)</span>
+            <% end %>
+            <span class="text-yellow-500 mr-1">✗</span>
+          </div>
+
+          <h2><%= link_to article.title, article_path(article.slug), class: 'inline-flex' %></h2>
+
+          <p><%= article.body %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,14 @@
+# == Schema Information
+#
+# Table name: article_labels
+#
+#  id         :bigint           not null, primary key
+#  article_id :bigint           not null
+#  label_id   :bigint           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  article: hello_world
+  label: ruby_on_rails

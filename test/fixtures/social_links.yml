@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: social_links
+#
+#  id         :bigint           not null, primary key
+#  caption    :string
+#  href       :string
+#  svg_path   :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  caption: MyString
+  href: MyString
+  svg_path: MyString
+
+two:
+  caption: MyString
+  href: MyString
+  svg_path: MyString

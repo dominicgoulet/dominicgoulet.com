@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id           :bigint           not null, primary key
+#  title        :string
+#  body         :string
+#  published_on :date
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  slug         :string
+#
+
+hello_world:
+  title: Hello world!
+  body: Lorem ipsum dolor sit amet.
+  published_on: 2023-10-10

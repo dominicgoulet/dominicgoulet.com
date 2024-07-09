@@ -1,0 +1,15 @@
+<% flash.each do |type, message| %>
+  <div data-type="<%= type %>" class="mb-6 group data-[type=notice]:bg-green-50 data-[type=alert]:bg-red-50 rounded-md p-4">
+    <div class="flex">
+      <div class="flex-shrink-0">
+        <%= inline_svg_tag "#{type}.svg" %>
+      </div>
+
+      <div class="ml-3">
+        <h3 class="text-sm font-medium group-data-[type=notice]:text-green-800 group-data-[type=alert]:text-red-800">
+          <%= message %>
+        </h3>
+      </div>
+    </div>
+  </div>
+<% end %>
