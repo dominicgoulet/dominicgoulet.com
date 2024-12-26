@@ -42,6 +42,7 @@ gem "inline_svg", "1.9.0"
 # gem "front_matter_parser"
 
 group :development, :test do
+  gem "arlequin"
   gem "brakeman", require: false
   gem "debug"
   gem "faker", require: false

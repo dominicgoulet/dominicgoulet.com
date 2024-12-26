@@ -1,0 +1,5 @@
+<a class="flex-none group relative isolate flex items-center rounded-lg px-3 py-2 text-[0.8125rem]/6 font-medium text-white/30 transition-colors hover:text-sky-300 gap-x-3" href="<%= social_link.href %>" target="_blank">
+  <span class="absolute inset-0 -z-10 scale-75 rounded-lg bg-white/5 opacity-0 transition group-hover:scale-100 group-hover:opacity-100"></span>
+  <%= inline_svg_tag(social_link.svg_path) %>
+  <span class="self-baseline text-white"><%= social_link.caption %></span>
+</a>

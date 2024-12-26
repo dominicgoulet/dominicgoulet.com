@@ -13,5 +13,6 @@
 
 hello_world:
   title: Hello world!
+  slug: hello-world
   body: Lorem ipsum dolor sit amet.
   published_on: 2023-10-10

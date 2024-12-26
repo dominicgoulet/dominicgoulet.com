@@ -20,5 +20,10 @@ module DominicgouletCom
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+
+    # DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver
+    # in Rails 8.0. To opt in to the new behavior, set
+    config.active_support.to_time_preserves_timezone = :zone
   end
 end

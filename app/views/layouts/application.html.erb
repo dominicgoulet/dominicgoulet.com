@@ -53,13 +53,7 @@
               </p>
 
               <div class="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
-                <% @social_links.each do |social_link| %>
-                <a class="flex-none group relative isolate flex items-center rounded-lg px-3 py-2 text-[0.8125rem]/6 font-medium text-white/30 transition-colors hover:text-sky-300 gap-x-3" href="<%= social_link.href %>" target="_blank">
-                  <span class="absolute inset-0 -z-10 scale-75 rounded-lg bg-white/5 opacity-0 transition group-hover:scale-100 group-hover:opacity-100"></span>
-                  <%= inline_svg_tag(social_link.svg_path) %>
-                  <span class="self-baseline text-white"><%= social_link.caption %></span>
-                </a>
-                <% end %>
+                <%= render @social_links %>
               </div>
             </div>
           </div>
@@ -72,7 +66,7 @@
         <%= inline_svg_tag 'timeline_marks.svg' %>
       </div>
 
-      <main class="space-y-20 py-20 sm:space-y-32 sm:py-32">
+      <main class="space-y-10 py-10 sm:space-y-16 sm:py-16">
         <%= yield %>
       </main>
     </div>

@@ -15,5 +15,16 @@ class Article < ApplicationRecord
   has_rich_text :body
 
   # Scopes
-  scope :latest, -> { order(published_on: :desc).limit(2) }
+  scope :latest, -> { order(published_on: :desc) }
+
+  # Callbacks
+  before_validation :set_slug, on: :create
+
+  private
+
+  def set_slug
+    return if title.blank?
+
+    self.slug = title.parameterize
+  end
 end

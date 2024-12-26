@@ -26,20 +26,27 @@
 
     <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
       <div class="lg:ml-96 lg:flex lg:w-full lg:justify-end lg:pl-32">
-        <div class="mx-auto max-w-lg lg:mx-0 lg:w-0 lg:max-w-xl lg:flex-auto typography">
+        <div class="mx-auto max-w-lg lg:mx-0 lg:w-0 lg:max-w-xl lg:flex-auto">
 
           <div class="-ml-5 pt-2 text-xs text-purple-700 font-bold font-mono">
             <span class="text-green-500 mr-1">➜</span>
-            <span class="text-sky-500 mr-1">dominicgoulet.com</span>
-            <% article.labels.each do |label| %>
-              <span class="mr-1">label:(<span class="text-red-500"><%= label.name.downcase.gsub(' ', '_') %></span>)</span>
-            <% end %>
+
+            <span class="text-sky-500 mr-1">
+              <%= link_to 'dominicgoulet.com', root_path, class: 'border-b-2 py-1 border-double border-transparent hover:border-sky-300 hover:text-sky-300' %>
+            </span>
+
+            <%= render article.labels %>
+
             <span class="text-yellow-500 mr-1">✗</span>
           </div>
 
-          <h2><%= link_to article.title, article_path(article.slug), class: 'inline-flex' %></h2>
+          <div class="typography mt-4">
+            <h2>
+              <%= link_to article.title, article_path(article.slug), class: 'inline-flex border-b-4 py-1 border-transparent hover:border-yellow-100 hover:text-yellow-100' %>
+            </h2>
 
-          <p><%= article.body %></p>
+            <p><%= article.body %></p>
+          </div>
         </div>
       </div>
     </div>
